@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 const usePageDimensions = () => {
   const [dimensions, setDimensions] = useState([]);
   const pageRatio = 8 / 11;
-  const pageMargin = 0.95;
+  const pageMargin = 1;
 
   useEffect(() => {
     const windowSizeHandler = () => {
@@ -25,6 +25,7 @@ const usePageDimensions = () => {
     return () => {
       window.removeEventListener('resize', windowSizeHandler);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return dimensions;

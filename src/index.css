@@ -3,3 +3,317 @@
   margin: 0px;
   padding: 0px;
 }
+
+/*cenury-old-style*/
+@font-face {
+  font-family: 'cenury-old-style';
+  src: url('./fonts/century-old-style/CenturyOldStyleStd-Bold.woff2')
+    format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'cenury-old-style';
+  src: url('./fonts/century-old-style/CenturyOldStyleStd-Italic.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'cenury-old-style';
+  src: url('./fonts/century-old-style/CenturyOldStyleStd-Regular.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*charpentier-renaissance*/
+@font-face {
+  font-family: 'charpentier-renaissance';
+  src: url('./fonts/charpentier_renaissance/CharpentierRenRed-Demi.woff2')
+    format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'charpentier-renaissance';
+  src: url('./fonts/charpentier_renaissance/CharpentierRenRed-DemiObl.woff2')
+    format('woff2');
+  font-weight: bold;
+  font-style: oblique;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'charpentier-renaissance';
+  src: url('./fonts/charpentier_renaissance/CharpentierRenRed-Normal.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'charpentier-renaissance';
+  src: url('./fonts/charpentier_renaissance/CharpentierRenRed-Oblique.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/*chomsky*/
+@font-face {
+  font-family: 'chomsky';
+  src: url('./fonts/chomsky/Chomsky.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*coolvetica*/
+@font-face {
+  font-family: 'coolvetica';
+  src: url('./fonts/coolvetica/Coolvetica-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'coolvetica';
+  src: url('./fonts/coolvetica/Coolvetica-HeavyComp.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'coolvetica';
+  src: url('./fonts/coolvetica/Coolvetica-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/*franklin-gothic*/
+@font-face {
+  font-family: 'franklin-gothic';
+  src: url('./fonts/franklin-gothic-webfont/FranklinGothicITALIC.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'franklin-gothic';
+  src: url('./fonts/franklin-gothic-webfont/FranklinGothicCondensed.woff2')
+    format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'franklin-gothic';
+  src: url('./fonts/franklin-gothic-webfont/FranklinGothic.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/*interstate*/
+
+@font-face {
+  font-family: 'interstate';
+  src: url('./fonts/interstate-2-cdnfonts/Interstate-Bold.woff2')
+    format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'interstate';
+  src: url('./fonts/interstate-2-cdnfonts/Interstate-BoldItalic.woff2')
+    format('woff2');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'interstate';
+  src: url('./fonts//interstate-2-cdnfonts/Interstate.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'interstate';
+  src: url('./fonts//interstate-2-cdnfonts/Interstate-Italic.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/*junigarden*/
+@font-face {
+  font-family: 'junigarden';
+  src: url('./fonts/junigarden_swash/JunigardenSerifPERSONALUSE-Regular.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'junigarden-swash';
+  src: url('./fonts/junigarden_swash/JunigardenSwashPERSONALUSE-Regular.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*kaldevaderibbon*/
+@font-face {
+  font-family: 'kaldevaderibbon';
+  src: url('./fonts/kaldevaderibbon/KaldevaderibbonRegular.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*nimrod*/
+
+@font-face {
+  font-family: 'nimrod-cyr';
+  src: url('./fonts/nimrod-webfont/NimrodCyr.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'nimrod-cyr';
+  src: url('./fonts/nimrod-webfont/NimrodCyr-BoldInclined.woff2')
+    format('woff2');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'nimrod-cyr';
+  src: url('./fonts/nimrod-webfont/NimrodCyr-Inclined.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'nimrod';
+  src: url('./fonts/nimrod-webfont/Nimrod.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*poynter*/
+
+@font-face {
+  font-family: 'poynter';
+  src: url('./fonts/Poynter-Font/PoynterText-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'poynter';
+  src: url('./fonts/Poynter-Font/PoynterText-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'poynter';
+  src: url('./fonts/Poynter-Font/PoynterText-ItalicFour.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/*saint-carell*/
+
+@font-face {
+  font-family: 'saint-carell';
+  src: url('./fonts/saint_carell/SaintCarellPERSONAL-Regular.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*three-dimensional*/
+
+@font-face {
+  font-family: 'three-dimensional';
+  src: url('./fonts/three_dimensions/ThreeDimensionsStroked-Regular.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*modernoir*/
+@font-face {
+  font-family: 'modernoir';
+  src: url('./fonts/tt_modernoir/TTModernoirTrial-Bd.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*vanilla-whale*/
+
+@font-face {
+  font-family: 'vanilla-whale';
+  src: url('./fonts/vanilla_whale/VanillaWhale-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*via-appia*/
+
+@font-face {
+  font-family: 'via-appia';
+  src: url('./fonts/via_appia/ViaAppia-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*vortigra*/
+
+@font-face {
+  font-family: 'vortigra';
+  src: url('./fonts/vortigra/Vortigra.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

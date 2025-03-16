@@ -6,7 +6,7 @@
 }
 
 .headline {
-  color: rgb(40, 40, 40);
+  color: var(--primary-typography-color);
   font-size: calc(var(--page-width) * 0.037);
   font-style: italic;
   transform: scaleY(1.2);

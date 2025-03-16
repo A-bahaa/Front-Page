@@ -10,10 +10,12 @@ const Page = () => {
   usePageDimensions();
   return (
     <div className="page">
-      <Masthead />
-      <Folio></Folio>
-      <Headline></Headline>
-      <Cut></Cut>
+      <div className="page-wrap">
+        <Masthead />
+        <Folio></Folio>
+        <Headline></Headline>
+        <Cut></Cut>
+      </div>
     </div>
   );
 };

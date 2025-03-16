@@ -14,7 +14,7 @@ const Cut = () => {
         alignItems: 'center',
       }}
     >
-      <img src="test9.jpg" style={{ height: '100%' }} />
+      <img src="testImgs/test9.jpg" style={{ height: '100%' }} />
     </div>
   );
 };

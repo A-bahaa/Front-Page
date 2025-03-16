@@ -2,22 +2,18 @@ import React from 'react';
 import '../styles/page.css';
 import usePageDimensions from '../hooks/usePageDimensions';
 import Masthead from './Masthead';
+import Folio from './Folio';
+import Headline from './Headline';
+import Cut from './Cut';
 
 const Page = () => {
-  const dimensions = usePageDimensions();
-  console.log(dimensions[0], dimensions[1]);
+  usePageDimensions();
   return (
-    <div
-      className="page"
-      style={{
-        width: dimensions[0],
-        height: dimensions[1],
-        padding: dimensions[0] * 0.04,
-        backgroundColor: 'red',
-        backgroundClip: 'content-box',
-      }}
-    >
-      <Masthead dimensions={dimensions} />
+    <div className="page">
+      <Masthead />
+      <Folio></Folio>
+      <Headline></Headline>
+      <Cut></Cut>
     </div>
   );
 };

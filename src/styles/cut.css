@@ -1,5 +1,5 @@
 .page-cut-wrap {
-  height: fit-content;
+  width: 100%;
   margin-top: 2%;
   display: flex;
   justify-content: center;

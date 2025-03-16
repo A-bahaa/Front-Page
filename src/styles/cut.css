@@ -1,0 +1,14 @@
+.page-cut-wrap {
+  height: fit-content;
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-cut {
+  height: 100%;
+}

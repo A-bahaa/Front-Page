@@ -1,20 +1,10 @@
 import React from 'react';
+import '../styles/cut.css';
 
 const Cut = () => {
   return (
-    <div
-      style={{
-        width: '100%',
-        /*border: '1px solid red',*/
-        flexGrow: 1,
-        marginTop: '2%',
-        overflow: 'hidden',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <img src="testImgs/test9.jpg" style={{ height: '100%' }} />
+    <div className="page-cut-wrap">
+      <img src="testImgs/test6.jpg" className="page-cut" />
     </div>
   );
 };

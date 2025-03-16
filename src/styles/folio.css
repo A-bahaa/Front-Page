@@ -1,10 +1,10 @@
 .folio-wrap {
   width: 100%;
   height: 2%;
-  border-bottom: 2px solid rgb(40, 40, 40);
+  border-bottom: 2px solid var(--primary-typography-color);
   font-family: georgia, 'Times New Roman', Times, serif, 'Times New Roman',
     Times, serif;
-  color: rgb(40, 40, 40);
+  color: var(--primary-typography-color);
   font-size: calc(var(--page-width) * 0.015);
   display: flex;
   justify-content: space-between;

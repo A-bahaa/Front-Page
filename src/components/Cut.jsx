@@ -4,7 +4,7 @@ import '../styles/cut.css';
 const Cut = () => {
   return (
     <div className="page-cut-wrap">
-      <img src="testImgs/test6.jpg" className="page-cut" />
+      <img src="testImgs/tes3.jpg" className="page-cut" />
     </div>
   );
 };

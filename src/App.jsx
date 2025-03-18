@@ -1,22 +1,21 @@
 import './App.css';
 import Page from './components/Page';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from './pages/Home';
+import Editorial from './pages/Editorial';
 
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+  },
+  {
+    path: '/editorial',
+    element: <Editorial />,
+  },
+]);
 function App() {
-  return (
-    <div>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '100%',
-          height: '100vh',
-        }}
-      >
-        <Page />
-      </div>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

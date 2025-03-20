@@ -8,7 +8,6 @@
 
 .headline {
   color: var(--primary-typography-color);
-  font-style: italic;
   transform: scaleY(1.4);
   text-align: center;
   border: 1px solid navy;

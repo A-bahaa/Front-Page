@@ -1,11 +1,21 @@
 import React from 'react';
 
-const Panel = ({ setHeadline, headlineFontSize, SetHeadlineFontSize }) => {
+const Panel = ({
+  setHeadline,
+  headlineFontSize,
+  SetHeadlineFontSize,
+  headlineFontStyle,
+  setHeadlineFontStyle,
+}) => {
   const handleChangeHeadline = (event) => {
     setHeadline(event.target.value);
   };
   const handleChangeHeadlineFontSize = (event) => {
     SetHeadlineFontSize(parseFloat(event.target.value));
+  };
+
+  const handleCheckboxChange = () => {
+    setHeadlineFontStyle(headlineFontStyle === 'normal' ? 'italic' : 'normal');
   };
   return (
     <div>
@@ -29,6 +39,13 @@ const Panel = ({ setHeadline, headlineFontSize, SetHeadlineFontSize }) => {
         aria-describedby="change the headline font size"
         step={0.001}
         onChange={handleChangeHeadlineFontSize}
+      />
+      <label for="font-style-toggle">Italicize text</label>
+      <input
+        type="checkbox"
+        id="font-style-toggle"
+        checked={headlineFontStyle === 'italic'}
+        onChange={handleCheckboxChange}
       />
     </div>
   );

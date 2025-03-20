@@ -5,7 +5,7 @@ import Folio from './Folio';
 import Headline from './Headline';
 import Cut from './Cut';
 
-const Page = () => {
+const Page = ({ headline, headlineFontSize }) => {
   const [currentBgIndex, setCurrentBgIndex] = useState(2);
 
   const backgroundImages = [
@@ -36,7 +36,10 @@ const Page = () => {
       <div className="page-wrap">
         <Masthead />
         <Folio></Folio>
-        <Headline></Headline>
+        <Headline
+          headline={headline}
+          headlineFontSize={headlineFontSize}
+        ></Headline>
         <Cut></Cut>
       </div>
     </div>

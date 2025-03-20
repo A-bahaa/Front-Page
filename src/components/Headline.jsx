@@ -1,9 +1,14 @@
 import React from 'react';
 import '../styles/headline.css';
-const Headline = () => {
+const Headline = ({ headline, headlineFontSize }) => {
   return (
     <div className="headline-wrap">
-      <h2 className="headline">TRUMP IS INDICTED OVER CLASSIFIED FILES</h2>
+      <h2
+        className="headline"
+        style={{ fontSize: `calc(var(--page-width) * ${headlineFontSize})` }}
+      >
+        {headline}
+      </h2>
     </div>
   );
 };

@@ -3,14 +3,16 @@
   height: fit-content;
   margin-top: 2%;
   font-family: georgia, 'Times New Roman', Times, serif;
+  border: 1px solid seagreen;
 }
 
 .headline {
   color: var(--primary-typography-color);
-  font-size: calc(var(--page-width) * 0.037);
   font-style: italic;
   transform: scaleY(1.2);
   text-align: center;
-  text-wrap: nowrap;
+  border: 1px solid navy;
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }

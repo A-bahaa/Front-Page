@@ -1,0 +1,27 @@
+.editorial-wrap {
+  padding: 3%;
+  height: 100vh;
+  display: flex;
+  background-color: red;
+  background-clip: content-box;
+}
+
+.editorial-page-wrap {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.editorial-panel-wrap {
+  width: 50%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .editorial-wrap {
+    flex-direction: column;
+  }
+  .editorial-page-wrap {
+    width: 100%;
+    margin-top: 20px;
+  }
+}

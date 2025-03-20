@@ -9,7 +9,7 @@
 .headline {
   color: var(--primary-typography-color);
   font-style: italic;
-  transform: scaleY(1.2);
+  transform: scaleY(1.4);
   text-align: center;
   border: 1px solid navy;
   white-space: nowrap;

@@ -13,8 +13,4 @@
   text-align: center;
   text-wrap: nowrap;
   overflow: hidden;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 }

@@ -19,8 +19,4 @@
   overflow: hidden;
   color: var(--primary-typography-color);
   padding-bottom: calc(var(--page-width) * 0.035);
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 }

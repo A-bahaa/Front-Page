@@ -11,6 +11,10 @@
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .page::before {

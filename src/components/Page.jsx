@@ -6,7 +6,7 @@ import Headline from './Headline';
 import Cut from './Cut';
 
 const Page = () => {
-  const [currentBgIndex, setCurrentBgIndex] = useState(0);
+  const [currentBgIndex, setCurrentBgIndex] = useState(2);
 
   const backgroundImages = [
     '../../public/background.jpg',

@@ -6,7 +6,7 @@
   box-shadow: 6px 4px 7px -1px rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: 6px 4px 7px -1px rgba(0, 0, 0, 0.6);
   -moz-box-shadow: 6px 4px 7px -1px rgba(0, 0, 0, 0.6);
-  background-image: url('../../public/background4.jpg');
+  background-color: rgb(5, 166, 235);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

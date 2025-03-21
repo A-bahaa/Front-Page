@@ -8,6 +8,7 @@ const Editorial = () => {
     'Double cick to change the background texture'
   );
   const [headlineFontSize, SetHeadlineFontSize] = useState(0.037);
+  const [headlineFontStyle, setHeadlineFontStyle] = useState('italic');
   return (
     <div
       className="editorial-wrap"
@@ -21,7 +22,11 @@ const Editorial = () => {
           border: '1px solid black',
         }}
       >
-        <Page headline={headline} headlineFontSize={headlineFontSize} />
+        <Page
+          headline={headline}
+          headlineFontSize={headlineFontSize}
+          headlineFontStyle={headlineFontStyle}
+        />
       </div>
       <div
         style={{ border: '1px solid blue' }}
@@ -31,6 +36,8 @@ const Editorial = () => {
           setHeadline={setHeadline}
           headlineFontSize={headlineFontSize}
           SetHeadlineFontSize={SetHeadlineFontSize}
+          headlineFontStyle={headlineFontStyle}
+          setHeadlineFontStyle={setHeadlineFontStyle}
         />
       </div>
     </div>

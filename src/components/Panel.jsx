@@ -40,7 +40,7 @@ const Panel = ({
         step={0.001}
         onChange={handleChangeHeadlineFontSize}
       />
-      <label for="font-style-toggle">Italicize text</label>
+      <label htmlFor="font-style-toggle">Italicize text</label>
       <input
         type="checkbox"
         id="font-style-toggle"

@@ -1,10 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import '../styles/cut.css';
 
-const Cut = () => {
-  const [image, setImage] = useState(null);
-  const fileInputRef = useRef(null);
-
+const Cut = ({ image, setImage, fileInputRef }) => {
   const handleFileChange = (event) => {
     console.log('clicked');
     const file = event.target.files[0];
@@ -33,45 +30,18 @@ const Cut = () => {
     }
   };
 
-  const handleRemoveImage = () => {
-    setImage(null);
-    if (fileInputRef.current) {
-      fileInputRef.current.value = null; // Clear the input value
-    }
-  };
   return (
     <div
       className="page-cut-wrap"
       style={{
-        border: '2px dashed navy',
+        border: '2px dashed var(--primary-typography-color)',
         textAlign: 'center',
       }}
       onDrop={handleDrop}
       onDragOver={handleDragOver}
     >
-      {/*<img src="testImgs/tes3.jpg" className="page-cut" />*/}
       {image ? (
-        <>
-          <img src={image} alt="hero-shot" className="page-cut" />
-          <button
-            style={{
-              position: 'absolute',
-              top: '5px',
-              right: '5px',
-              background: 'red',
-              color: 'white',
-              border: 'none',
-              borderRadius: '50%',
-              width: '25px',
-              height: '25px',
-              cursor: 'pointer',
-              zIndex: 2,
-            }}
-            onClick={handleRemoveImage}
-          >
-            X
-          </button>
-        </>
+        <img src={image} alt="hero-shot" className="page-cut" />
       ) : (
         <>
           <input

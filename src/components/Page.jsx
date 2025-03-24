@@ -5,7 +5,14 @@ import Folio from './Folio';
 import Headline from './Headline';
 import Cut from './Cut';
 
-const Page = ({ headline, headlineFontSize, headlineFontStyle }) => {
+const Page = ({
+  headline,
+  headlineFontSize,
+  headlineFontStyle,
+  image,
+  setImage,
+  fileInputRef,
+}) => {
   const [currentBgIndex, setCurrentBgIndex] = useState(2);
 
   const backgroundImages = [
@@ -51,7 +58,11 @@ const Page = ({ headline, headlineFontSize, headlineFontStyle }) => {
           headlineFontSize={headlineFontSize}
           headlineFontStyle={headlineFontStyle}
         ></Headline>
-        <Cut></Cut>
+        <Cut
+          image={image}
+          setImage={setImage}
+          fileInputRef={fileInputRef}
+        ></Cut>
       </div>
     </div>
   );

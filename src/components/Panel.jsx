@@ -1,4 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import PanelHeadline from './PanelHeadline';
+import PanelHeadlineEditor from './PanelHeadlineEditor';
+import Byline from './Byline';
+import { Story } from './Story';
+import StoryProgress from './StoryProgress';
+import Aud from '../assets/sounds/writing_sound.mp3';
 
 const Panel = ({
   setHeadline,
@@ -7,6 +13,16 @@ const Panel = ({
   headlineFontStyle,
   setHeadlineFontStyle,
 }) => {
+  const [storyText, setStoryText] = useState('        Cairo -');
+  const [storyLength, setStoryLength] = useState(storyText.length);
+  const [audio, setAudio] = useState(null);
+
+  useEffect(() => {
+    const audioElement = new Audio(Aud);
+    setAudio(audioElement);
+  }, []);
+
+  const maxLength = 700;
   const handleChangeHeadline = (event) => {
     setHeadline(event.target.value);
   };
@@ -17,36 +33,48 @@ const Panel = ({
   const handleCheckboxChange = () => {
     setHeadlineFontStyle(headlineFontStyle === 'normal' ? 'italic' : 'normal');
   };
-  return (
-    <div>
-      <label htmlFor="headline">HEADLINE</label>
-      <input
-        type="text"
-        id="headline"
-        placeholder="Double cick to change the background texture"
-        onChange={handleChangeHeadline}
-        aria-describedby="type the headline of your story"
-      />
-      <small>Please enter your full name as it appears on your ID</small>
 
-      <label htmlFor="font-size">Font size</label>
-      <input
-        type="range"
-        id="font-size"
-        min={0.03}
-        max={0.1}
-        value={headlineFontSize}
-        aria-describedby="change the headline font size"
-        step={0.001}
-        onChange={handleChangeHeadlineFontSize}
+  const playSound = () => {
+    // disable the typing sound effect on firefox for now (poor smothing)
+    if (!/Firefox/.test(navigator.userAgent)) {
+      audio.currentTime = 0; // reset playback position
+      audio.volume = Math.random() * 0.4 + 0.2; // randomize volume
+      audio.play();
+    }
+  };
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        border: '2px solid green',
+        width: `var(--page-width)`,
+        height: `var(--page-height)`,
+      }}
+    >
+      <PanelHeadlineEditor
+        headlineFontSize={headlineFontSize}
+        handleChangeHeadlineFontSize={handleChangeHeadlineFontSize}
+        headlineFontStyle={headlineFontStyle}
+        handleCheckboxChange={handleCheckboxChange}
       />
-      <label htmlFor="font-style-toggle">Italicize text</label>
-      <input
-        type="checkbox"
-        id="font-style-toggle"
-        checked={headlineFontStyle === 'italic'}
-        onChange={handleCheckboxChange}
+
+      <PanelHeadline
+        handleChangeHeadline={handleChangeHeadline}
+        headlineFontSize={headlineFontSize}
+        headlineFontStyle={headlineFontStyle}
+        playSound={playSound}
       />
+      <Byline />
+      <Story
+        storyText={storyText}
+        setStoryText={setStoryText}
+        setStoryLength={setStoryLength}
+        maxLength={maxLength}
+        playSound={playSound}
+      />
+      <StoryProgress storyLength={storyLength} maxLength={maxLength} />
     </div>
   );
 };

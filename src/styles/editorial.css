@@ -14,12 +14,16 @@
 
 .editorial-panel-wrap {
   width: 50%;
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 1000px) {
   .editorial-wrap {
     flex-direction: column;
+    height: auto;
   }
+  .editorial-panel-wrap,
   .editorial-page-wrap {
     width: 100%;
     margin-top: 20px;

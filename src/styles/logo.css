@@ -1,0 +1,23 @@
+.logo-wrap {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.logo-title {
+  height: 75%;
+  width: min-content;
+  font-family: chomsky;
+  border-left: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 5px;
+  padding-left: 3%;
+}
+
+.logo-img {
+  height: 100%;
+}

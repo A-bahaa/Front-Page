@@ -17,14 +17,24 @@ const Page = ({ headline, headlineFontSize, headlineFontStyle }) => {
     '../../public/background6.jpg',
   ];
 
-  const handleChangeBg = () => {
+  const loadImage = async () => {
     const newImageIndex = (currentBgIndex + 1) % backgroundImages.length;
-    const newImage = new Image();
-    newImage.src = backgroundImages[newImageIndex];
-    // wait untill the new image is uploaded then change the state
-    newImage.onload = () => {
-      setCurrentBgIndex(newImageIndex);
-    };
+    const image = new Image();
+    image.src = backgroundImages[newImageIndex];
+
+    if (image.complete) {
+      return newImageIndex;
+    } else {
+      await new Promise((resolve) => {
+        image.onload = resolve;
+      });
+      return newImageIndex;
+    }
+  };
+
+  const handleChangeBg = async () => {
+    const newImageIndex = await loadImage();
+    setCurrentBgIndex(newImageIndex);
   };
 
   return (

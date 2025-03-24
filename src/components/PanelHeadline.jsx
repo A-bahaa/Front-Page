@@ -5,6 +5,7 @@ const PanelHeadline = ({
   handleChangeHeadline,
   headlineFontSize,
   headlineFontStyle,
+  playSound,
 }) => {
   return (
     <div className="panel-headline-wrap">
@@ -23,6 +24,7 @@ const PanelHeadline = ({
           fontStyle: headlineFontStyle,
         }}
         maxLength={50}
+        onKeyDown={playSound}
       />
     </div>
   );

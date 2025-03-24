@@ -12,6 +12,7 @@ const Panel = ({
   SetHeadlineFontSize,
   headlineFontStyle,
   setHeadlineFontStyle,
+  handleIssueJournal,
 }) => {
   const [storyText, setStoryText] = useState('        Cairo -');
   const [storyLength, setStoryLength] = useState(storyText.length);
@@ -75,6 +76,7 @@ const Panel = ({
         playSound={playSound}
       />
       <StoryProgress storyLength={storyLength} maxLength={maxLength} />
+      <button onClick={handleIssueJournal}>Issue Journal</button>
     </div>
   );
 };

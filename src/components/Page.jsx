@@ -12,6 +12,7 @@ const Page = ({
   image,
   setImage,
   fileInputRef,
+  PageRef,
 }) => {
   const [currentBgIndex, setCurrentBgIndex] = useState(2);
 
@@ -46,23 +47,36 @@ const Page = ({
 
   return (
     <div
-      className="page"
-      style={{ backgroundImage: `url(${backgroundImages[currentBgIndex]})` }}
-      onDoubleClick={handleChangeBg}
+      style={{
+        width: 'calc(var(--page-width) * 1.25',
+        height: 'calc((11*var(--page-width)*1.25)/6.7)',
+
+        border: '2px solid aqua',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+      ref={PageRef}
     >
-      <div className="page-wrap">
-        <Masthead />
-        <Folio></Folio>
-        <Headline
-          headline={headline}
-          headlineFontSize={headlineFontSize}
-          headlineFontStyle={headlineFontStyle}
-        ></Headline>
-        <Cut
-          image={image}
-          setImage={setImage}
-          fileInputRef={fileInputRef}
-        ></Cut>
+      <div
+        className="page"
+        style={{ backgroundImage: `url(${backgroundImages[currentBgIndex]})` }}
+        onDoubleClick={handleChangeBg}
+      >
+        <div className="page-wrap">
+          <Masthead />
+          <Folio></Folio>
+          <Headline
+            headline={headline}
+            headlineFontSize={headlineFontSize}
+            headlineFontStyle={headlineFontStyle}
+          ></Headline>
+          <Cut
+            image={image}
+            setImage={setImage}
+            fileInputRef={fileInputRef}
+          ></Cut>
+        </div>
       </div>
     </div>
   );

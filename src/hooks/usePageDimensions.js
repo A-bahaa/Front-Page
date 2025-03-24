@@ -1,7 +1,7 @@
 import { useLayoutEffect } from 'react';
 const usePageDimensions = () => {
   const pageRatio = 6 / 11;
-  const pageMargin = 0.9;
+  const pageMargin = 0.8;
 
   useLayoutEffect(() => {
     const windowSizeHandler = () => {

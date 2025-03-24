@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/cut.css';
+import { FormatPainterOutlined } from '@ant-design/icons';
 
 const Cut = ({ image, setImage, fileInputRef }) => {
   const handleFileChange = (event) => {
@@ -12,10 +13,12 @@ const Cut = ({ image, setImage, fileInputRef }) => {
     event.preventDefault();
     const file = event.dataTransfer.files[0];
     handleImage(file);
+    console.log("i'm droping");
   };
 
   const handleDragOver = (event) => {
     event.preventDefault();
+    console.log("i'm dragging");
   };
 
   const handleImage = (file) => {
@@ -31,15 +34,7 @@ const Cut = ({ image, setImage, fileInputRef }) => {
   };
 
   return (
-    <div
-      className="page-cut-wrap"
-      style={{
-        border: '2px dashed var(--primary-typography-color)',
-        textAlign: 'center',
-      }}
-      onDrop={handleDrop}
-      onDragOver={handleDragOver}
-    >
+    <div className="page-cut-wrap">
       {image ? (
         <img src={image} alt="hero-shot" className="page-cut" />
       ) : (
@@ -53,11 +48,13 @@ const Cut = ({ image, setImage, fileInputRef }) => {
           />
           <button
             onClick={() => fileInputRef.current.click()}
-            style={{ zIndex: 2 }}
+            onDrop={handleDrop}
+            onDragOver={handleDragOver}
+            className="page-cut-add-btn"
+            aria-describedby="add the lead photo of your journal"
           >
-            Upload Image
+            <span className="page-cut-add-title">Add your Cut</span>
           </button>
-          <p>Drag and drop image here</p>
         </>
       )}
     </div>

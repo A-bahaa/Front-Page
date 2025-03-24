@@ -9,6 +9,30 @@
   overflow: hidden;
 }
 
+.page-cut-add-btn {
+  width: 30%;
+  height: 20%;
+  margin-top: -25%;
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border: none;
+  background: transparent;
+  background-image: url('./PressCam.png');
+  background-repeat: no-repeat;
+  background-size: 120%;
+}
+
+.page-cut-add-title {
+  font-family: georgia, 'Times New Roman', Times, serif;
+  font-size: 0.9em;
+  font-style: italic;
+  transform: translate(0.8em, -0.5em);
+  color: var(--primary-typography-color);
+}
+
 .page-cut {
   height: 100%;
 }

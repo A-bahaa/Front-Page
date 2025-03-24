@@ -27,7 +27,8 @@
 }
 .panel-headline-input {
   margin-top: 4.5%;
-  border: none;
+  border: 1px solid transparent;
+  transition: border-color 0.5s ease-in-out;
   background-color: transparent;
   font-family: georgia, 'Times New Roman', Times, serif;
   text-align: center;
@@ -68,6 +69,6 @@
 
 input[type='text']:focus {
   outline: none;
-  border: 1px solid #ccc;
+  border-color: var(--primary-typography-color);
   border-radius: 4px;
 }

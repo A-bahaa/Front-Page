@@ -15,6 +15,7 @@
   position: absolute;
   top: 0%;
   left: 1%;
+  font-size: 0.8em;
 }
 
 input[type='range'] {
@@ -66,6 +67,7 @@ input[type='range']::-moz-range-thumb {
   position: absolute;
   top: 0%;
   right: 1%;
+  font-size: 0.8em;
 }
 
 input[type='checkbox'] {

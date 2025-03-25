@@ -30,6 +30,7 @@ const Editorial = () => {
         .toPng(PageRef.current, {
           quality: 1,
           cacheBust: true, // Enable cache busting
+          bgcolor: 'white',
         })
         .then((dataUrl) => {
           const link = document.createElement('a');

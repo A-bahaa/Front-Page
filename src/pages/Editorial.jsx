@@ -12,7 +12,7 @@ const Editorial = () => {
   const [headlineFontStyle, setHeadlineFontStyle] = useState('italic');
   const [image, setImage] = useState(null);
   const fileInputRef = useRef(null);
-  const PageRef = useRef(null);
+  const pageRef = useRef(null);
 
   const handleRemoveImage = () => {
     setImage(null);
@@ -26,7 +26,7 @@ const Editorial = () => {
       alert("don't have cut");
     } else {
       domtoimage
-        .toPng(PageRef.current, {
+        .toPng(pageRef.current, {
           quality: 1,
           cacheBust: true, // Enable cache busting
           bgcolor: 'white',
@@ -63,7 +63,7 @@ const Editorial = () => {
           image={image}
           setImage={setImage}
           fileInputRef={fileInputRef}
-          PageRef={PageRef}
+          pageRef={pageRef}
         />
       </div>
       <div

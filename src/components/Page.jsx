@@ -12,7 +12,7 @@ const Page = ({
   image,
   setImage,
   fileInputRef,
-  PageRef,
+  pageRef,
 }) => {
   const [currentBgIndex, setCurrentBgIndex] = useState(2);
 
@@ -46,18 +46,7 @@ const Page = ({
   };
 
   return (
-    <div
-      style={{
-        width: 'calc(var(--page-width) * 1.25',
-        height: 'calc((11*var(--page-width)*1.25)/6.7)',
-
-        border: '2px solid aqua',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-      ref={PageRef}
-    >
+    <div className="page-screenshot" ref={pageRef}>
       <div
         className="page"
         style={{ backgroundImage: `url(${backgroundImages[currentBgIndex]})` }}

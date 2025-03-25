@@ -2,7 +2,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-1em, -1em);
+  transform: translate(-1.7em, -1.7em);
 }
 
 @media only screen and (max-width: 1024px) {

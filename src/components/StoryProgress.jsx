@@ -4,6 +4,7 @@ import '../styles/storyProgress.css';
 
 const StoryProgress = ({ storyLength, maxLength }) => {
   const percent = Math.floor((storyLength / maxLength) * 100);
+  const isMobile = window.matchMedia('(max-width: 1024px)').matches;
 
   return (
     <div className="story-progress-wrap">
@@ -13,7 +14,7 @@ const StoryProgress = ({ storyLength, maxLength }) => {
         strokeColor="var(--primary-typography-color)"
         trailColor="#ccc"
         showInfo={true}
-        size={30}
+        size={isMobile ? 30 : 50}
       />
     </div>
   );

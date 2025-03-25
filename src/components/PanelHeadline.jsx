@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../styles/panelHeadline.css';
 
 const PanelHeadline = ({
@@ -7,12 +7,18 @@ const PanelHeadline = ({
   headlineFontStyle,
   playSound,
 }) => {
+  const panelHeadlineRef = useRef(null);
+
+  const handleMouseOut = () => {
+    panelHeadlineRef.current.blur();
+  };
   return (
     <div className="panel-headline-wrap">
       <label htmlFor="headline" className="visually-hidden">
         Headline
       </label>
       <input
+        ref={panelHeadlineRef}
         className="panel-headline-input"
         type="text"
         id="headline"
@@ -25,6 +31,7 @@ const PanelHeadline = ({
         }}
         maxLength={50}
         onKeyDown={playSound}
+        onMouseOut={handleMouseOut}
       />
     </div>
   );

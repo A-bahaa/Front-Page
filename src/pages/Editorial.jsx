@@ -11,6 +11,8 @@ const Editorial = () => {
   const [headlineFontSize, SetHeadlineFontSize] = useState(0.037);
   const [headlineFontStyle, setHeadlineFontStyle] = useState('italic');
   const [image, setImage] = useState(null);
+  const [storyText, setStoryText] = useState('');
+  const [showLoader, setShowLoader] = useState(false);
   const fileInputRef = useRef(null);
   const pageRef = useRef(null);
   const storyRef = useRef(null);
@@ -23,10 +25,26 @@ const Editorial = () => {
   };
 
   const handleIssueJournal = () => {
-    if (image === null) {
-      alert("don't have cut");
-    } else {
-      console.log(storyRef.current);
+    setShowLoader(true);
+
+    domtoimage
+      .toPng(pageRef.current, {
+        quality: 1,
+        cacheBust: true, // Enable cache busting
+        bgcolor: 'white',
+      })
+      .then((dataUrl) => {
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = 'journal_name.png';
+        link.click();
+        if (!storyText) setShowLoader(false);
+      })
+      .catch((error) => {
+        console.error('Error exporting the front page:', error);
+        alert('error saving the front-page');
+      });
+    if (storyText) {
       domtoimage
         .toPng(storyRef.current, {
           quality: 1,
@@ -34,14 +52,15 @@ const Editorial = () => {
           bgcolor: 'white',
         })
         .then((dataUrl) => {
-          console.log('kinda success');
           const link = document.createElement('a');
           link.href = dataUrl;
-          link.download = 'journal.png';
+          link.download = 'story_date.png';
           link.click();
+          setShowLoader(false);
         })
         .catch((error) => {
-          console.error('Error exporting image:', error);
+          console.error('Error exporting the front page:', error);
+          alert('error saving the story');
         });
     }
   };
@@ -82,7 +101,10 @@ const Editorial = () => {
           handleIssueJournal={handleIssueJournal}
           handleRemoveImage={handleRemoveImage}
           image={image}
+          storyText={storyText}
+          setStoryText={setStoryText}
           storyRef={storyRef}
+          showLoader={showLoader}
         />
       </div>
     </div>

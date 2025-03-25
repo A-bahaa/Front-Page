@@ -6,6 +6,7 @@ import { Story } from './Story';
 import StoryProgress from './StoryProgress';
 import Aud from '../assets/sounds/writing_sound.mp3';
 import '../styles/panel.css';
+import { Spin } from 'antd';
 
 const Panel = ({
   setHeadline,
@@ -17,8 +18,10 @@ const Panel = ({
   handleRemoveImage,
   image,
   storyRef,
+  showLoader,
+  storyText,
+  setStoryText,
 }) => {
-  const [storyText, setStoryText] = useState('');
   const [storyLength, setStoryLength] = useState(storyText.length);
   const [audio, setAudio] = useState(null);
 
@@ -84,9 +87,17 @@ const Panel = ({
         />
       </div>
       <div style={{ position: 'relative', top: '200px' }}>
+        {showLoader && <Spin />}
         <StoryProgress storyLength={storyLength} maxLength={maxLength} />
-        <button onClick={handleIssueJournal}>Issue Journal</button>
-        <button onClick={handleRemoveImage} disabled={!image}>
+        <button onClick={handleIssueJournal} disabled={!image || showLoader}>
+          Issue Journal
+        </button>
+        <button
+          onClick={handleRemoveImage}
+          disabled={!image}
+          title="remove-photo"
+          aria-describedby="remove the lead photo of your journal"
+        >
           Remove cut
         </button>
         <button>Author</button>

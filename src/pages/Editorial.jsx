@@ -91,7 +91,7 @@ const Editorial = () => {
           pageRef={pageRef}
         />
       </div>
-      <StoryProgress storyLength={storyLength} maxLength={700} />
+      <StoryProgress storyLength={storyLength} maxLength={maxLength} />
       <div
         style={{ border: '1px solid blue' }}
         className="editorial-panel-wrap"
@@ -108,6 +108,7 @@ const Editorial = () => {
           storyText={storyText}
           setStoryText={setStoryText}
           setStoryLength={setStoryLength}
+          maxLength={maxLength}
           storyRef={storyRef}
           showLoader={showLoader}
         />

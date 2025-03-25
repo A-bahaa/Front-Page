@@ -16,7 +16,7 @@ const Panel = ({
   handleRemoveImage,
   image,
 }) => {
-  const [storyText, setStoryText] = useState('        Cairo -');
+  const [storyText, setStoryText] = useState('');
   const [storyLength, setStoryLength] = useState(storyText.length);
   const [audio, setAudio] = useState(null);
 
@@ -26,6 +26,8 @@ const Panel = ({
   }, []);
 
   const maxLength = 700;
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  const isFirefox = /Firefox/.test(navigator.userAgent);
   const handleChangeHeadline = (event) => {
     setHeadline(event.target.value);
   };
@@ -39,7 +41,8 @@ const Panel = ({
 
   const playSound = () => {
     // disable the typing sound effect on firefox for now (poor smothing)
-    if (!/Firefox/.test(navigator.userAgent)) {
+    // disble the typing sound on mobile devices
+    if (!isFirefox && !isMobile) {
       audio.currentTime = 0; // reset playback position
       audio.volume = Math.random() * 0.4 + 0.2; // randomize volume
       audio.play();
@@ -77,11 +80,14 @@ const Panel = ({
         maxLength={maxLength}
         playSound={playSound}
       />
-      <StoryProgress storyLength={storyLength} maxLength={maxLength} />
-      <button onClick={handleIssueJournal}>Issue Journal</button>
-      <button onClick={handleRemoveImage} disabled={!image}>
-        Remove cut
-      </button>
+      <div style={{ position: 'relative', top: '200px' }}>
+        <StoryProgress storyLength={storyLength} maxLength={maxLength} />
+        <button onClick={handleIssueJournal}>Issue Journal</button>
+        <button onClick={handleRemoveImage} disabled={!image}>
+          Remove cut
+        </button>
+        <button>Author</button>
+      </div>
     </div>
   );
 };

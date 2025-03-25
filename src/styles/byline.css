@@ -1,11 +1,11 @@
 .byline {
   font-family: georgia, 'Times New Roman', Times, serif;
   font-size: calc(var(--page-width) * 0.025);
-  font-weight: bold;
-  font-style: italic;
+  font-weight: normal;
+  /*font-style: italic;*/
   border: 1px solid black;
   margin-top: 5%;
   color: #ccc;
   font-weight: bold;
-  /*color: var(--primary-typography-color);*/
+  color: var(--primary-typography-color);
 }

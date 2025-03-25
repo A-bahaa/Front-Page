@@ -4,7 +4,7 @@ import '../styles/byline.css';
 const Byline = () => {
   return (
     <div className="byline" aria-describedby="name of the journal's author">
-      By Ahmed Ghonim
+      By AHMED GHONIM
     </div>
   );
 };

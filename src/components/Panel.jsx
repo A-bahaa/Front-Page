@@ -5,6 +5,7 @@ import Byline from './Byline';
 import { Story } from './Story';
 import StoryProgress from './StoryProgress';
 import Aud from '../assets/sounds/writing_sound.mp3';
+import '../styles/panel.css';
 
 const Panel = ({
   setHeadline,
@@ -15,6 +16,7 @@ const Panel = ({
   handleIssueJournal,
   handleRemoveImage,
   image,
+  storyRef,
 }) => {
   const [storyText, setStoryText] = useState('');
   const [storyLength, setStoryLength] = useState(storyText.length);
@@ -65,21 +67,22 @@ const Panel = ({
         headlineFontStyle={headlineFontStyle}
         handleCheckboxChange={handleCheckboxChange}
       />
-
-      <PanelHeadline
-        handleChangeHeadline={handleChangeHeadline}
-        headlineFontSize={headlineFontSize}
-        headlineFontStyle={headlineFontStyle}
-        playSound={playSound}
-      />
-      <Byline />
-      <Story
-        storyText={storyText}
-        setStoryText={setStoryText}
-        setStoryLength={setStoryLength}
-        maxLength={maxLength}
-        playSound={playSound}
-      />
+      <div ref={storyRef} className="panel-screenshot">
+        <PanelHeadline
+          handleChangeHeadline={handleChangeHeadline}
+          headlineFontSize={headlineFontSize}
+          headlineFontStyle={headlineFontStyle}
+          playSound={playSound}
+        />
+        <Byline />
+        <Story
+          storyText={storyText}
+          setStoryText={setStoryText}
+          setStoryLength={setStoryLength}
+          maxLength={maxLength}
+          playSound={playSound}
+        />
+      </div>
       <div style={{ position: 'relative', top: '200px' }}>
         <StoryProgress storyLength={storyLength} maxLength={maxLength} />
         <button onClick={handleIssueJournal}>Issue Journal</button>

@@ -13,6 +13,7 @@ const Editorial = () => {
   const [image, setImage] = useState(null);
   const fileInputRef = useRef(null);
   const pageRef = useRef(null);
+  const storyRef = useRef(null);
 
   const handleRemoveImage = () => {
     setImage(null);
@@ -25,13 +26,15 @@ const Editorial = () => {
     if (image === null) {
       alert("don't have cut");
     } else {
+      console.log(storyRef.current);
       domtoimage
-        .toPng(pageRef.current, {
+        .toPng(storyRef.current, {
           quality: 1,
           cacheBust: true, // Enable cache busting
           bgcolor: 'white',
         })
         .then((dataUrl) => {
+          console.log('kinda success');
           const link = document.createElement('a');
           link.href = dataUrl;
           link.download = 'journal.png';
@@ -79,6 +82,7 @@ const Editorial = () => {
           handleIssueJournal={handleIssueJournal}
           handleRemoveImage={handleRemoveImage}
           image={image}
+          storyRef={storyRef}
         />
       </div>
     </div>

@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import Page from '../components/Page';
 import Panel from '../components/Panel';
 import '../styles/editorial.css';
-import CutRemover from '../components/CutRemover';
 import domtoimage from 'dom-to-image';
 
 const Editorial = () => {
@@ -55,7 +54,6 @@ const Editorial = () => {
         className="editorial-page-wrap"
         style={{
           border: '1px solid black',
-          position: 'relative',
         }}
       >
         <Page
@@ -67,7 +65,6 @@ const Editorial = () => {
           fileInputRef={fileInputRef}
           PageRef={PageRef}
         />
-        <CutRemover image={image} handleRemoveImage={handleRemoveImage} />
       </div>
       <div
         style={{ border: '1px solid blue' }}
@@ -80,6 +77,8 @@ const Editorial = () => {
           headlineFontStyle={headlineFontStyle}
           setHeadlineFontStyle={setHeadlineFontStyle}
           handleIssueJournal={handleIssueJournal}
+          handleRemoveImage={handleRemoveImage}
+          image={image}
         />
       </div>
     </div>

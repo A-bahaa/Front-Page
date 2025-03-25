@@ -13,6 +13,8 @@ const Panel = ({
   headlineFontStyle,
   setHeadlineFontStyle,
   handleIssueJournal,
+  handleRemoveImage,
+  image,
 }) => {
   const [storyText, setStoryText] = useState('        Cairo -');
   const [storyLength, setStoryLength] = useState(storyText.length);
@@ -77,6 +79,9 @@ const Panel = ({
       />
       <StoryProgress storyLength={storyLength} maxLength={maxLength} />
       <button onClick={handleIssueJournal}>Issue Journal</button>
+      <button onClick={handleRemoveImage} disabled={!image}>
+        Remove cut
+      </button>
     </div>
   );
 };

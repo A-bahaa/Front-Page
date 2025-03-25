@@ -14,18 +14,25 @@ export const Story = ({
     setStoryText(newText);
     setStoryLength(newText.length);
   };
-  console.log(/Chrome/.test(navigator.userAgent));
+  const date = new Date();
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
 
   return (
     <div className="story-container">
       <textarea
         className="story-textarea"
         value={storyText}
+        placeholder="CAIRO - "
         onChange={handleTextChange}
         maxLength={maxLength}
         onKeyDown={playSound}
       ></textarea>
-      <div className="logo-container">
+      <div className="story-deco">
+        <p>{date.toLocaleDateString('en-US', options)}</p>
         <Logo />
       </div>
     </div>

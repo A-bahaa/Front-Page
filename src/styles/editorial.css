@@ -4,6 +4,7 @@
   display: flex;
   background-color: red;
   background-clip: content-box;
+  position: relative;
 }
 
 .editorial-page-wrap {
@@ -20,7 +21,7 @@
   align-items: center;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
   .editorial-wrap {
     flex-direction: column;
     height: auto;

@@ -3,6 +3,7 @@ import Page from '../components/Page';
 import Panel from '../components/Panel';
 import '../styles/editorial.css';
 import domtoimage from 'dom-to-image';
+import StoryProgress from '../components/StoryProgress';
 
 const Editorial = () => {
   const [headline, setHeadline] = useState(
@@ -12,10 +13,12 @@ const Editorial = () => {
   const [headlineFontStyle, setHeadlineFontStyle] = useState('italic');
   const [image, setImage] = useState(null);
   const [storyText, setStoryText] = useState('');
+  const [storyLength, setStoryLength] = useState(storyText.length);
   const [showLoader, setShowLoader] = useState(false);
   const fileInputRef = useRef(null);
   const pageRef = useRef(null);
   const storyRef = useRef(null);
+  const maxLength = 700;
 
   const handleRemoveImage = () => {
     setImage(null);
@@ -88,6 +91,7 @@ const Editorial = () => {
           pageRef={pageRef}
         />
       </div>
+      <StoryProgress storyLength={storyLength} maxLength={700} />
       <div
         style={{ border: '1px solid blue' }}
         className="editorial-panel-wrap"
@@ -103,6 +107,7 @@ const Editorial = () => {
           image={image}
           storyText={storyText}
           setStoryText={setStoryText}
+          setStoryLength={setStoryLength}
           storyRef={storyRef}
           showLoader={showLoader}
         />

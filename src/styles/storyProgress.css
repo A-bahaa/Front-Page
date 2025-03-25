@@ -1,0 +1,12 @@
+.story-progress-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-1em, -1em);
+}
+
+@media only screen and (max-width: 1024px) {
+  .story-progress-wrap {
+    transform: translate(-1em, 1em);
+  }
+}

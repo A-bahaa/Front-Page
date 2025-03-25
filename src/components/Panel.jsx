@@ -3,7 +3,6 @@ import PanelHeadline from './PanelHeadline';
 import PanelHeadlineEditor from './PanelHeadlineEditor';
 import Byline from './Byline';
 import { Story } from './Story';
-import StoryProgress from './StoryProgress';
 import Aud from '../assets/sounds/writing_sound.mp3';
 import '../styles/panel.css';
 import { Spin } from 'antd';
@@ -21,16 +20,15 @@ const Panel = ({
   showLoader,
   storyText,
   setStoryText,
+  setStoryLength,
+  maxLength,
 }) => {
-  const [storyLength, setStoryLength] = useState(storyText.length);
   const [audio, setAudio] = useState(null);
-
   useEffect(() => {
     const audioElement = new Audio(Aud);
     setAudio(audioElement);
   }, []);
 
-  const maxLength = 700;
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
   const isFirefox = /Firefox/.test(navigator.userAgent);
   const handleChangeHeadline = (event) => {
@@ -86,9 +84,9 @@ const Panel = ({
           playSound={playSound}
         />
       </div>
-      <div style={{ position: 'relative', top: '200px' }}>
-        {showLoader && <Spin />}
-        <StoryProgress storyLength={storyLength} maxLength={maxLength} />
+      <div style={{ border: '1px solid yellow' }}>
+        {<Spin />}
+
         <button onClick={handleIssueJournal} disabled={!image || showLoader}>
           Issue Journal
         </button>

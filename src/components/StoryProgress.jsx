@@ -1,11 +1,12 @@
 import React from 'react';
 import { Progress } from 'antd';
+import '../styles/storyProgress.css';
 
 const StoryProgress = ({ storyLength, maxLength }) => {
   const percent = Math.floor((storyLength / maxLength) * 100);
 
   return (
-    <div style={{ alignSelf: 'flex-start', marginLeft: '5%', marginTop: '2%' }}>
+    <div className="story-progress-wrap">
       <Progress
         percent={percent}
         type="circle"

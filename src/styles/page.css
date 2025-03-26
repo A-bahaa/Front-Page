@@ -5,6 +5,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translateX(-100%);
+  animation: slideIn 0.5s ease-in-out forwards;
 }
 
 .page {
@@ -55,4 +57,13 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }

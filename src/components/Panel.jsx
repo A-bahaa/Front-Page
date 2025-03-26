@@ -51,16 +51,7 @@ const Panel = ({
     }
   };
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        //border: '2px solid green',
-        width: `var(--page-width)`,
-        height: `var(--page-height)`,
-      }}
-    >
+    <div className="panel-wrap">
       <PanelHeadlineEditor
         headlineFontSize={headlineFontSize}
         handleChangeHeadlineFontSize={handleChangeHeadlineFontSize}

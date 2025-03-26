@@ -21,9 +21,28 @@ const Editorial = () => {
   const storyRef = useRef(null);
   const maxLength = 700;
 
-  window.onload = function () {
-    setLoading(false);
+  const promises = [];
+
+  // Add promises for fonts
+  document.fonts.onloadingdone = function () {
+    promises.push(Promise.resolve());
   };
+
+  // Add promises for images
+  const images = document.querySelectorAll('img');
+  images.forEach(function (img) {
+    promises.push(
+      new Promise(function (resolve) {
+        img.onload = resolve;
+      })
+    );
+  });
+
+  // Wait for all promises to resolve
+  Promise.all(promises).then(function () {
+    console.log('now');
+    setLoading(false);
+  });
   const handleRemoveImage = () => {
     setImage(null);
     if (fileInputRef.current) {

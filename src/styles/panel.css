@@ -4,8 +4,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid black;
+}
+.action-btns-wrap {
+  border: 1px solid yellow;
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
 }
 
 .ant-spin-dot-item {
   color: var(--primary-typography-color);
+}
+
+.action-btn {
+  font-family: georgia, 'Times New Roman', Times, serif;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.hide-from-mobile {
+  display: none;
 }

@@ -5,8 +5,7 @@ import Byline from './Byline';
 import { Story } from './Story';
 import Aud from '../assets/sounds/writing_sound.mp3';
 import '../styles/panel.css';
-import { Spin } from 'antd';
-
+import { Spin, Button } from 'antd';
 const Panel = ({
   setHeadline,
   headlineFontSize,
@@ -84,21 +83,36 @@ const Panel = ({
           playSound={playSound}
         />
       </div>
-      <div style={{ border: '1px solid yellow' }}>
-        {<Spin />}
-
-        <button onClick={handleIssueJournal} disabled={!image || showLoader}>
+      <div className="action-btns-wrap">
+        <Button
+          className={isMobile ? 'hide-from-mobile' : 'action-btn'}
+          color="default"
+          variant="solid"
+          onClick={handleIssueJournal}
+          disabled={!image || showLoader}
+          aria-describedby="download your journal as images"
+        >
           Issue Journal
-        </button>
-        <button
+          {showLoader && <Spin />}
+        </Button>
+        <Button
+          className="action-btn"
+          color="default"
+          variant="solid"
           onClick={handleRemoveImage}
           disabled={!image}
-          title="remove-photo"
           aria-describedby="remove the lead photo of your journal"
         >
           Remove cut
-        </button>
-        <button>Author</button>
+        </Button>
+        <Button
+          className="action-btn"
+          color="default"
+          variant="solid"
+          aria-describedby="change the meta data of your journal"
+        >
+          Author
+        </Button>
       </div>
     </div>
   );

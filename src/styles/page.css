@@ -56,18 +56,3 @@
   align-items: center;
   position: relative;
 }
-
-.page-wrap::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('../assets/images/noisy-background.jpg');
-  background-size: 100px 100px;
-  background-position: center;
-  background-repeat: repeat;
-  opacity: 0.2;
-  mix-blend-mode: multiply;
-}

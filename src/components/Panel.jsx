@@ -21,6 +21,7 @@ const Panel = ({
   setStoryText,
   setStoryLength,
   maxLength,
+  setShowAuthor,
 }) => {
   const [audio, setAudio] = useState(null);
   useEffect(() => {
@@ -50,6 +51,7 @@ const Panel = ({
       audio.play();
     }
   };
+  const openAuthor = () => [setShowAuthor(true)];
   return (
     <div className="panel-wrap">
       <PanelHeadlineEditor
@@ -101,6 +103,7 @@ const Panel = ({
           color="default"
           variant="solid"
           aria-describedby="change the meta data of your journal"
+          onClick={openAuthor}
         >
           Author
         </Button>

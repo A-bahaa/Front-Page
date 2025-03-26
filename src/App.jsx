@@ -17,6 +17,14 @@ const router = createBrowserRouter([
 ]);
 function App() {
   usePageDimensions();
+  if (!localStorage.getItem('masthead')) {
+    localStorage.setItem('masthead', '');
+    localStorage.setItem('masthead_font_size', '0.13');
+    localStorage.setItem('name', '');
+    localStorage.setItem('default_city', '');
+    localStorage.setItem('issue_no', 0);
+  }
+
   return <RouterProvider router={router} />;
 }
 

@@ -5,9 +5,14 @@ import '../styles/editorial.css';
 import domtoimage from 'dom-to-image';
 import StoryProgress from '../components/StoryProgress';
 import { Spin } from 'antd';
+import Author from '../components/Author';
 
 const Editorial = () => {
   const [loading, setLoading] = useState(true);
+  const [showAuthor, setShowAuthor] = useState(
+    !localStorage.getItem('masthead')
+  );
+  /*const [showAuthor, setShowAuthor] = useState(true);*/
   const [headline, setHeadline] = useState(
     'Double cick to change the background texture'
   );
@@ -21,7 +26,7 @@ const Editorial = () => {
   const pageRef = useRef(null);
   const storyRef = useRef(null);
   const maxLength = 700;
-
+  console.log(showAuthor, 'jj');
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -77,44 +82,55 @@ const Editorial = () => {
 
   return (
     <>
-      {loading ? (
-        <Spin style={{ transform: 'translate(49vw, 49vh)' }} />
+      {!loading ? (
+        showAuthor ? (
+          <Author setShowAuthor={setShowAuthor} />
+        ) : (
+          <div className="editorial-wrap">
+            <div className="editorial-page-wrap">
+              <Page
+                headline={headline}
+                headlineFontSize={headlineFontSize}
+                headlineFontStyle={headlineFontStyle}
+                image={image}
+                setImage={setImage}
+                fileInputRef={fileInputRef}
+                pageRef={pageRef}
+              />
+            </div>
+            <StoryProgress storyLength={storyLength} maxLength={maxLength} />
+            <div className="editorial-panel-wrap">
+              <Panel
+                setHeadline={setHeadline}
+                headlineFontSize={headlineFontSize}
+                SetHeadlineFontSize={SetHeadlineFontSize}
+                headlineFontStyle={headlineFontStyle}
+                setHeadlineFontStyle={setHeadlineFontStyle}
+                handleIssueJournal={handleIssueJournal}
+                handleRemoveImage={handleRemoveImage}
+                image={image}
+                storyText={storyText}
+                setStoryText={setStoryText}
+                setStoryLength={setStoryLength}
+                maxLength={maxLength}
+                storyRef={storyRef}
+                showLoader={showLoader}
+                setShowAuthor={setShowAuthor}
+              />
+            </div>
+          </div>
+        )
       ) : (
-        <div className="editorial-wrap">
-          <div className="editorial-page-wrap">
-            <Page
-              headline={headline}
-              headlineFontSize={headlineFontSize}
-              headlineFontStyle={headlineFontStyle}
-              image={image}
-              setImage={setImage}
-              fileInputRef={fileInputRef}
-              pageRef={pageRef}
-            />
-          </div>
-          <StoryProgress storyLength={storyLength} maxLength={maxLength} />
-          <div className="editorial-panel-wrap">
-            <Panel
-              setHeadline={setHeadline}
-              headlineFontSize={headlineFontSize}
-              SetHeadlineFontSize={SetHeadlineFontSize}
-              headlineFontStyle={headlineFontStyle}
-              setHeadlineFontStyle={setHeadlineFontStyle}
-              handleIssueJournal={handleIssueJournal}
-              handleRemoveImage={handleRemoveImage}
-              image={image}
-              storyText={storyText}
-              setStoryText={setStoryText}
-              setStoryLength={setStoryLength}
-              maxLength={maxLength}
-              storyRef={storyRef}
-              showLoader={showLoader}
-            />
-          </div>
-        </div>
-      )}{' '}
+        <Spin style={{ transform: 'translate(49vw, 49vh)' }} />
+      )}
     </>
   );
 };
 
 export default Editorial;
+
+/*
+
+        
+
+*/

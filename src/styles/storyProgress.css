@@ -4,9 +4,11 @@
   top: 50%;
   transform: translate(-1.7em, -1.7em);
 }
-
+.ant-progress-text {
+  font-family: georgia, 'Times New Roman', Times, serif;
+}
 @media only screen and (max-width: 1024px) {
   .story-progress-wrap {
-    transform: translate(-1em, 1em);
+    transform: translate(-1em, 1.5em);
   }
 }

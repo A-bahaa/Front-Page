@@ -56,7 +56,7 @@ const Panel = ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        border: '2px solid green',
+        //border: '2px solid green',
         width: `var(--page-width)`,
         height: `var(--page-height)`,
       }}

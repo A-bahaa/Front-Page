@@ -3,14 +3,14 @@
   height: fit-content;
   margin-top: 2%;
   font-family: georgia, 'Times New Roman', Times, serif;
-  border: 1px solid seagreen;
+  /* border: 1px solid seagreen;*/
 }
 
 .headline {
   color: var(--primary-typography-color);
   transform: scaleY(1.4);
   text-align: center;
-  border: 1px solid navy;
+  /*border: 1px solid navy;*/
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

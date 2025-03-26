@@ -8,7 +8,7 @@
   --primary-typography-color: rgb(40, 40, 40);
 }
 
-body::before {
+/*body::before {
   content: '';
   position: fixed;
   top: 0;
@@ -24,7 +24,7 @@ body::before {
   background-size: 10px 10px;
   pointer-events: none;
   z-index: 1000;
-}
+}*/
 
 /*cenury-old-style*/
 @font-face {

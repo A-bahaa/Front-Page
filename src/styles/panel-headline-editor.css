@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   position: relative;
   font-style: italic;
   font-family: georgia, 'Times New Roman', Times, serif;

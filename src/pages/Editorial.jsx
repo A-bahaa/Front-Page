@@ -69,18 +69,8 @@ const Editorial = () => {
   };
 
   return (
-    <div
-      className="editorial-wrap"
-      style={{
-        border: '1px solid red',
-      }}
-    >
-      <div
-        className="editorial-page-wrap"
-        style={{
-          border: '1px solid black',
-        }}
-      >
+    <div className="editorial-wrap">
+      <div className="editorial-page-wrap">
         <Page
           headline={headline}
           headlineFontSize={headlineFontSize}
@@ -92,10 +82,7 @@ const Editorial = () => {
         />
       </div>
       <StoryProgress storyLength={storyLength} maxLength={maxLength} />
-      <div
-        style={{ border: '1px solid blue' }}
-        className="editorial-panel-wrap"
-      >
+      <div className="editorial-panel-wrap">
         <Panel
           setHeadline={setHeadline}
           headlineFontSize={headlineFontSize}

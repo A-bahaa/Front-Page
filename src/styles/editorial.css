@@ -2,7 +2,7 @@
   padding: 3%;
   height: 100vh;
   display: flex;
-  background-color: red;
+  /*background-color: red;*/
   background-clip: content-box;
   position: relative;
 }

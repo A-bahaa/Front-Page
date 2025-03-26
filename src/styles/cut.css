@@ -20,7 +20,7 @@
   align-items: flex-end;
   border: none;
   background: transparent;
-  background-image: url('./PressCam.png');
+  background-image: url('../assets/images/PressCam.png');
   background-repeat: no-repeat;
   background-size: 120%;
 }

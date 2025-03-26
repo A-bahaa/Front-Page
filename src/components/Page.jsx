@@ -4,6 +4,12 @@ import Masthead from './Masthead';
 import Folio from './Folio';
 import Headline from './Headline';
 import Cut from './Cut';
+import bg1 from '../assets/images/background.jpg';
+import bg2 from '../assets/images/background2.jpg';
+import bg3 from '../assets/images/background3.jpg';
+import bg4 from '../assets/images/background4.jpg';
+import bg5 from '../assets/images/background5.jpg';
+import bg6 from '../assets/images/background6.jpg';
 
 const Page = ({
   headline,
@@ -16,14 +22,7 @@ const Page = ({
 }) => {
   const [currentBgIndex, setCurrentBgIndex] = useState(2);
 
-  const backgroundImages = [
-    '../../public/background.jpg',
-    '../../public/background2.jpg',
-    '../../public/background3.jpg',
-    '../../public/background4.jpg',
-    '../../public/background5.jpg',
-    '../../public/background6.jpg',
-  ];
+  const backgroundImages = [bg1, bg2, bg3, bg4, bg5, bg6];
 
   const loadImage = async () => {
     const newImageIndex = (currentBgIndex + 1) % backgroundImages.length;

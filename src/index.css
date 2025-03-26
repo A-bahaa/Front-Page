@@ -29,7 +29,7 @@
 /*chomsky*/
 @font-face {
   font-family: 'chomsky';
-  src: url('./fonts/chomsky/Chomsky.woff2') format('woff2');
+  src: url('./assets/fonts/chomsky/Chomsky.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -39,7 +39,7 @@
 
 @font-face {
   font-family: 'georgia';
-  src: url('./fonts/georgia/georgia.woff2') format('woff2');
+  src: url('./assets/fonts/georgia/georgia.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -47,7 +47,7 @@
 
 @font-face {
   font-family: 'georgia';
-  src: url('./fonts/georgia/georgia-b.woff2') format('woff2');
+  src: url('./assets/fonts/georgia/georgia-b.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -55,7 +55,7 @@
 
 @font-face {
   font-family: 'georgia';
-  src: url('./fonts/georgia/georgia-i.woff2') format('woff2');
+  src: url('./assets/fonts/georgia/georgia-i.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -63,7 +63,7 @@
 
 @font-face {
   font-family: 'georgia';
-  src: url('./fonts/georgia/georgia-bi.woff2') format('woff2');
+  src: url('./assets/fonts/georgia/georgia-bi.woff2') format('woff2');
   font-weight: bold;
   font-style: italic;
   font-display: swap;

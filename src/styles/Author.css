@@ -2,32 +2,36 @@
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
-
+.logo-cnt {
+  height: 100%;
+  font-size: calc(var(--page-width) * 0.2);
+}
 .author-form {
+  margin-right: 10%;
   width: var(--page-width);
-  height: var(--page-height);
-  border: 1px solid black;
+  height: auto;
   padding: calc(var(--page-width) * 0.06) calc(var(--page-width) * 0.03);
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: translateX(-100%);
+  animation: slideIn 0.5s ease-in-out forwards;
 }
 .section {
   width: 100%;
   height: auto;
-  border: 1px solid red;
   margin-bottom: 2em;
   position: relative;
 }
 
-label {
+.author-label {
   position: absolute;
   top: -1.5em;
   left: 1%;
-  font-size: 1em;
+  font-size: calc(var(--page-width) * 0.03);
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: italic;
 }
@@ -38,11 +42,12 @@ label {
 
 .author-text-input {
   color: var(--primary-typography-color);
-  border: 1px solid transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   transition: border-color 0.5s ease-in-out;
   background-color: transparent;
   font-family: georgia, 'Times New Roman', Times, serif;
-  font-size: 1.5em;
+  font-size: calc(var(--page-width) * 0.06);
   width: 100%;
   padding: 0.5em;
   font-weight: bold;
@@ -50,41 +55,12 @@ label {
   align-self: center;
 }
 
-::-webkit-input-placeholder {
-  /* WebKit, Blink, Edge */
-  color: #ccc;
-}
-
-:-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
-  color: #ccc;
-  opacity: 1;
-}
-
-::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
-  color: #ccc;
-  opacity: 1;
-}
-
-:-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: #ccc;
-}
-
-::placeholder {
-  /* Modern browsers */
-  color: #ccc;
-}
-
 .author-text-input:focus {
   outline: none;
   border-color: var(--primary-typography-color);
-  border-radius: 4px;
 }
 
 .author-range-input {
-  border: 1px solid yellow;
   /* removing default appearance */
   -webkit-appearance: none;
   appearance: none;
@@ -127,4 +103,19 @@ label {
   border-radius: 50%;
   cursor: grab;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 1300px) {
+  .author-wrap {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logo-cnt {
+    height: 15%;
+    transform: translateY(-30%);
+    font-size: calc(var(--page-width) * 0.04);
+  }
+  .author-form {
+    margin-right: 0%;
+  }
 }

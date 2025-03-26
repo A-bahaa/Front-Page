@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/Author.css';
 import { Button } from 'antd';
+import Logo from './Logo';
 
 const Author = ({ setShowAuthor }) => {
   const [masthead, setMasthead] = useState(localStorage.getItem('masthead'));
@@ -51,9 +52,14 @@ const Author = ({ setShowAuthor }) => {
 
   return (
     <div className="author-wrap">
+      <div className="logo-cnt">
+        <Logo />
+      </div>
       <div className="author-form">
         <div className="section">
-          <label htmlFor="masthead">Masthead</label>
+          <label htmlFor="masthead" className="author-label">
+            Masthead
+          </label>
           <input
             required={true}
             className="author-text-input"
@@ -74,7 +80,7 @@ const Author = ({ setShowAuthor }) => {
               textAlign: 'center',
             }}
           />
-          <label htmlFor="masthead-size" className="hidden">
+          <label htmlFor="masthead-size" className="visually-hidden ">
             masthead size
           </label>
           <input
@@ -93,7 +99,9 @@ const Author = ({ setShowAuthor }) => {
           />
         </div>
         <div className="section">
-          <label htmlFor="byline">Byline</label>
+          <label htmlFor="byline" className="author-label">
+            Byline
+          </label>
           <input
             required={true}
             className="author-text-input"
@@ -107,7 +115,9 @@ const Author = ({ setShowAuthor }) => {
           />
         </div>
         <div className="section">
-          <label htmlFor="city">city</label>
+          <label htmlFor="city" className="author-label">
+            city
+          </label>
           <input
             required={true}
             className="author-text-input"
@@ -120,8 +130,9 @@ const Author = ({ setShowAuthor }) => {
             onChange={handleChangeDefaultCity}
           />
         </div>
-        <div className="section">
+        <div className="section action-btns-wrap" style={{ marginBottom: '0' }}>
           <Button
+            className="action-btn"
             color="default"
             variant="solid"
             onClick={handleSaveChanges}
@@ -131,6 +142,7 @@ const Author = ({ setShowAuthor }) => {
             Submit
           </Button>
           <Button
+            className="action-btn "
             color="default"
             variant="solid"
             onClick={closeAuthor}

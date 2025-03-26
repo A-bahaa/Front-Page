@@ -28,7 +28,7 @@
 
 .action-btn {
   font-family: georgia, 'Times New Roman', Times, serif;
-  font-size: 0.9em;
+  font-size: calc(var(--page-width) * 0.035);
   font-style: italic;
 }
 

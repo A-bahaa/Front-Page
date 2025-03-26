@@ -11,6 +11,7 @@ export const Story = ({
   playSound,
 }) => {
   const textAreaRef = useRef(null);
+  const default_city = localStorage.getItem('default_city').toUpperCase();
   const handleTextChange = (e) => {
     const newText = e.target.value;
     setStoryText(newText);
@@ -32,7 +33,7 @@ export const Story = ({
         ref={textAreaRef}
         className="story-textarea"
         value={storyText}
-        placeholder="CAIRO - "
+        placeholder={default_city + ' - '}
         onChange={handleTextChange}
         maxLength={maxLength}
         onKeyDown={playSound}

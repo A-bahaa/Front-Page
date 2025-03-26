@@ -39,8 +39,8 @@ const Author = ({ setShowAuthor }) => {
     setShowAuthor(false);
   };
 
-  const range_min = 0.1;
-  const range_max = 0.2;
+  const range_min = 0.05;
+  const range_max = 0.116;
   const range_step = 0.001;
   const byline_max_length = 40;
   const city_max_length = 25;

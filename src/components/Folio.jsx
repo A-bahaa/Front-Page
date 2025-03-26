@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/folio.css';
 
 const Folio = () => {
+  const issue_no = parseInt(localStorage.getItem('issue_no'));
   const options = {
     weekday: 'long',
     year: 'numeric',
@@ -13,7 +14,7 @@ const Folio = () => {
     .toUpperCase();
   return (
     <div className="folio-wrap ">
-      <span>VOL. I .... No. 1</span>
+      <span>VOL. I .... No. {issue_no + 1}</span>
       <span> {formattedDate}</span>
       <span>$0.00</span>
     </div>

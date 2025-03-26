@@ -25,8 +25,16 @@ const Editorial = () => {
   const fileInputRef = useRef(null);
   const pageRef = useRef(null);
   const storyRef = useRef(null);
+  const masthead = localStorage.getItem('masthead');
+  const issue_no = parseInt(localStorage.getItem('issue_no'));
   const maxLength = 700;
-  console.log(showAuthor, 'jj');
+  const date = new Date();
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+  const date_formatted = date.toLocaleDateString('en-US', options);
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -41,6 +49,7 @@ const Editorial = () => {
 
   const handleIssueJournal = () => {
     setShowLoader(true);
+    localStorage.setItem('issue_no', issue_no + 1);
 
     domtoimage
       .toPng(pageRef.current, {
@@ -51,7 +60,7 @@ const Editorial = () => {
       .then((dataUrl) => {
         const link = document.createElement('a');
         link.href = dataUrl;
-        link.download = 'journal_name.png';
+        link.download = `${masthead} No. ${issue_no + 1}.png`;
         link.click();
         if (!storyText) setShowLoader(false);
       })
@@ -69,7 +78,7 @@ const Editorial = () => {
         .then((dataUrl) => {
           const link = document.createElement('a');
           link.href = dataUrl;
-          link.download = 'story_date.png';
+          link.download = `${date_formatted}.png`;
           link.click();
           setShowLoader(false);
         })

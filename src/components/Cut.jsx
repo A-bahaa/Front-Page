@@ -4,7 +4,6 @@ import { FormatPainterOutlined } from '@ant-design/icons';
 
 const Cut = ({ image, setImage, fileInputRef }) => {
   const handleFileChange = (event) => {
-    console.log('clicked');
     const file = event.target.files[0];
     handleImage(file);
   };
@@ -13,12 +12,10 @@ const Cut = ({ image, setImage, fileInputRef }) => {
     event.preventDefault();
     const file = event.dataTransfer.files[0];
     handleImage(file);
-    console.log("i'm droping");
   };
 
   const handleDragOver = (event) => {
     event.preventDefault();
-    console.log("i'm dragging");
   };
 
   const handleImage = (file) => {

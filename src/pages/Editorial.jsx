@@ -1,9 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Page from '../components/Page';
 import Panel from '../components/Panel';
 import '../styles/editorial.css';
 import domtoimage from 'dom-to-image';
 import StoryProgress from '../components/StoryProgress';
+import { Spin } from 'antd';
 
 const Editorial = () => {
   const [loading, setLoading] = useState(true);
@@ -21,9 +22,11 @@ const Editorial = () => {
   const storyRef = useRef(null);
   const maxLength = 700;
 
-  window.onload = function () {
-    setLoading(false);
-  };
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
   const handleRemoveImage = () => {
     setImage(null);
     if (fileInputRef.current) {
@@ -75,7 +78,7 @@ const Editorial = () => {
   return (
     <>
       {loading ? (
-        <>loading</>
+        <Spin style={{ transform: 'translate(49vw, 49vh)' }} />
       ) : (
         <div className="editorial-wrap">
           <div className="editorial-page-wrap">

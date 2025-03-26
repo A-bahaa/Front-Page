@@ -6,6 +6,7 @@ import domtoimage from 'dom-to-image';
 import StoryProgress from '../components/StoryProgress';
 
 const Editorial = () => {
+  const [loading, setLoading] = useState(true);
   const [headline, setHeadline] = useState(
     'Double cick to change the background texture'
   );
@@ -20,6 +21,9 @@ const Editorial = () => {
   const storyRef = useRef(null);
   const maxLength = 700;
 
+  window.onload = function () {
+    setLoading(false);
+  };
   const handleRemoveImage = () => {
     setImage(null);
     if (fileInputRef.current) {
@@ -69,38 +73,44 @@ const Editorial = () => {
   };
 
   return (
-    <div className="editorial-wrap">
-      <div className="editorial-page-wrap">
-        <Page
-          headline={headline}
-          headlineFontSize={headlineFontSize}
-          headlineFontStyle={headlineFontStyle}
-          image={image}
-          setImage={setImage}
-          fileInputRef={fileInputRef}
-          pageRef={pageRef}
-        />
-      </div>
-      <StoryProgress storyLength={storyLength} maxLength={maxLength} />
-      <div className="editorial-panel-wrap">
-        <Panel
-          setHeadline={setHeadline}
-          headlineFontSize={headlineFontSize}
-          SetHeadlineFontSize={SetHeadlineFontSize}
-          headlineFontStyle={headlineFontStyle}
-          setHeadlineFontStyle={setHeadlineFontStyle}
-          handleIssueJournal={handleIssueJournal}
-          handleRemoveImage={handleRemoveImage}
-          image={image}
-          storyText={storyText}
-          setStoryText={setStoryText}
-          setStoryLength={setStoryLength}
-          maxLength={maxLength}
-          storyRef={storyRef}
-          showLoader={showLoader}
-        />
-      </div>
-    </div>
+    <>
+      {loading ? (
+        <>loading</>
+      ) : (
+        <div className="editorial-wrap">
+          <div className="editorial-page-wrap">
+            <Page
+              headline={headline}
+              headlineFontSize={headlineFontSize}
+              headlineFontStyle={headlineFontStyle}
+              image={image}
+              setImage={setImage}
+              fileInputRef={fileInputRef}
+              pageRef={pageRef}
+            />
+          </div>
+          <StoryProgress storyLength={storyLength} maxLength={maxLength} />
+          <div className="editorial-panel-wrap">
+            <Panel
+              setHeadline={setHeadline}
+              headlineFontSize={headlineFontSize}
+              SetHeadlineFontSize={SetHeadlineFontSize}
+              headlineFontStyle={headlineFontStyle}
+              setHeadlineFontStyle={setHeadlineFontStyle}
+              handleIssueJournal={handleIssueJournal}
+              handleRemoveImage={handleRemoveImage}
+              image={image}
+              storyText={storyText}
+              setStoryText={setStoryText}
+              setStoryLength={setStoryLength}
+              maxLength={maxLength}
+              storyRef={storyRef}
+              showLoader={showLoader}
+            />
+          </div>
+        </div>
+      )}{' '}
+    </>
   );
 };
 

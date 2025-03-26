@@ -22,10 +22,7 @@ const Editorial = () => {
   const maxLength = 700;
 
   window.onload = function () {
-    console.log('noe');
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
+    setLoading(false);
   };
   const handleRemoveImage = () => {
     setImage(null);

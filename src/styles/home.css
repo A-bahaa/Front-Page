@@ -52,3 +52,19 @@
     top: calc(-4.5 * var(--page-height));
   }
 }
+
+@media only screen and (min-width: 1300px) {
+  .mobile-marquee {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .home-wrap {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .vertical-marquee-container {
+    display: none;
+  }
+}

@@ -7,6 +7,7 @@ import home3 from '../assets/images/home3.png';
 import home4 from '../assets/images/home4.png';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
+import Marquee from 'react-fast-marquee';
 
 const Home = () => {
   return (
@@ -32,6 +33,28 @@ const Home = () => {
           <img src={home4} alt="landing-image-4" />
         </div>
       </div>
+      <Marquee className="mobile-marquee">
+        <img
+          src={home1}
+          alt="landing-image-1"
+          style={{ width: 'var(--page-width)' }}
+        />
+        <img
+          src={home2}
+          alt="landing-image-2"
+          style={{ width: 'var(--page-width)' }}
+        />
+        <img
+          src={home3}
+          alt="landing-image-3"
+          style={{ width: 'var(--page-width)' }}
+        />
+        <img
+          src={home4}
+          alt="landing-image-4"
+          style={{ width: 'var(--page-width)' }}
+        />
+      </Marquee>
     </div>
   );
 };

@@ -8,6 +8,8 @@ import '../styles/panel.css';
 import { Spin, Button } from 'antd';
 const Panel = ({
   setHeadline,
+  setPanelHeadline,
+  panelHeadline,
   headlineFontSize,
   SetHeadlineFontSize,
   headlineFontStyle,
@@ -33,6 +35,7 @@ const Panel = ({
   const isFirefox = /Firefox/.test(navigator.userAgent);
   const handleChangeHeadline = (event) => {
     setHeadline(event.target.value);
+    setPanelHeadline(event.target.value);
   };
   const handleChangeHeadlineFontSize = (event) => {
     SetHeadlineFontSize(parseFloat(event.target.value));
@@ -62,6 +65,7 @@ const Panel = ({
       />
       <div ref={storyRef} className="panel-screenshot">
         <PanelHeadline
+          panelHeadline={panelHeadline}
           handleChangeHeadline={handleChangeHeadline}
           headlineFontSize={headlineFontSize}
           headlineFontStyle={headlineFontStyle}

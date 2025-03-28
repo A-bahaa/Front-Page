@@ -16,6 +16,7 @@ const Editorial = () => {
   const [headline, setHeadline] = useState(
     'Double cick to change the background texture'
   );
+  const [panelHeadline, setPanelHeadline] = useState('');
   const [headlineFontSize, SetHeadlineFontSize] = useState(0.037);
   const [headlineFontStyle, setHeadlineFontStyle] = useState('italic');
   const [image, setImage] = useState(null);
@@ -111,6 +112,8 @@ const Editorial = () => {
             <div className="editorial-panel-wrap">
               <Panel
                 setHeadline={setHeadline}
+                panelHeadline={panelHeadline}
+                setPanelHeadline={setPanelHeadline}
                 headlineFontSize={headlineFontSize}
                 SetHeadlineFontSize={SetHeadlineFontSize}
                 headlineFontStyle={headlineFontStyle}

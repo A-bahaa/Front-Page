@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import '../styles/panelHeadline.css';
 
 const PanelHeadline = ({
+  panelHeadline,
   handleChangeHeadline,
   headlineFontSize,
   headlineFontStyle,
@@ -22,6 +23,7 @@ const PanelHeadline = ({
         className="panel-headline-input"
         type="text"
         id="headline"
+        value={panelHeadline}
         placeholder="Write the slickest headline you can think of!"
         onChange={handleChangeHeadline}
         aria-describedby="type the headline of your story"

@@ -64,17 +64,8 @@ const Home = () => {
         <Link to="/editorial">Start Journaling</Link>
       </Button>
       <a
+        className="copywrite-anchor"
         href="https://www.linkedin.com/in/ahmed-ghonim-6643251a4/"
-        style={{
-          fontFamily: 'georgia',
-          fontStyle: 'italic',
-          position: 'absolute',
-          bottom: '10px',
-          left: '50%',
-          color: 'var(--primary-typography-color)',
-          transform: 'translateX(-50%)',
-          fontSize: '16px',
-        }}
       >
         ©ghonim's
       </a>

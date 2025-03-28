@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
 import Editorial from './pages/Editorial';
 import usePageDimensions from './hooks/usePageDimensions';
+import NotFound from './pages/NotFound';
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: '/editorial',
     element: <Editorial />,
+  },
+  {
+    path: '*',
+    element: <NotFound />,
   },
 ]);
 function App() {

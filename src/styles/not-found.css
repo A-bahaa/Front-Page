@@ -1,0 +1,14 @@
+.not-found-wrap {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found-text {
+  font-family: chomsky;
+  font-size: calc(var(--page-width) * 0.16);
+  margin-bottom: 1em;
+}

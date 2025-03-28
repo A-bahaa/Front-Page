@@ -11,7 +11,7 @@
 
 .vertical-marquee-container {
   height: 100%;
-  width: calc(var(--page-width) * 1.3);
+  width: calc(var(--page-width) * 1.28);
   margin-right: 10%;
   overflow: hidden;
   position: relative;

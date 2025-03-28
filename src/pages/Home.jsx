@@ -27,10 +27,26 @@ const Home = () => {
           </Button>
         </div>
         <div className="vertical-marquee-content">
-          <img src={home1} alt="landing-image-1" />
-          <img src={home2} alt="landing-image-2" />
-          <img src={home3} alt="landing-image-3" />
-          <img src={home4} alt="landing-image-4" />
+          <img
+            src={home1}
+            alt="landing-image-1"
+            style={{ width: 'calc(var(--page-width) * 1.28)' }}
+          />
+          <img
+            src={home2}
+            alt="landing-image-2"
+            style={{ width: 'calc(var(--page-width) * 1.28)' }}
+          />
+          <img
+            src={home3}
+            alt="landing-image-3"
+            style={{ width: 'calc(var(--page-width) * 1.28)' }}
+          />
+          <img
+            src={home4}
+            alt="landing-image-4"
+            style={{ width: 'calc(var(--page-width) * 1.28)' }}
+          />
         </div>
       </div>
       <Marquee className="mobile-marquee">

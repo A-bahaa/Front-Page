@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Editorial from './pages/Editorial';
 import usePageDimensions from './hooks/usePageDimensions';
 import NotFound from './pages/NotFound';
+import { Analytics } from '@vercel/analytics/react';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,12 @@ function App() {
     localStorage.setItem('issue_no', 0);
   }
 
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <Analytics />
+    </>
+  );
 }
 
 export default App;

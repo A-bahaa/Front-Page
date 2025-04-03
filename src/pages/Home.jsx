@@ -12,7 +12,18 @@ import Marquee from 'react-fast-marquee';
 const Home = () => {
   return (
     <div className="home-wrap">
-      <div className="logo-cnt tweak-home-logo">
+      <div className="mobile-header-cnt mobile">
+        <Logo />
+        <Button
+          className="action-btn mobile-navigator"
+          color="default"
+          variant="solid"
+          aria-describedby="go to the editorial page"
+        >
+          <Link to="/editorial">Start Journaling</Link>
+        </Button>
+      </div>
+      <div className="logo-cnt desktop">
         <Logo />
       </div>
       <div className="vertical-marquee-container">
@@ -71,14 +82,6 @@ const Home = () => {
           style={{ width: 'var(--page-width)' }}
         />
       </Marquee>
-      <Button
-        className="action-btn mobile-navigator"
-        color="default"
-        variant="solid"
-        aria-describedby="go to the editorial page"
-      >
-        <Link to="/editorial">Start Journaling</Link>
-      </Button>
       <a
         className="copywrite-anchor"
         href="https://www.linkedin.com/in/ahmed-ghonim-6643251a4/"

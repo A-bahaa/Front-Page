@@ -35,4 +35,5 @@
 
 .page-cut {
   height: 100%;
+  mix-blend-mode: multiply;
 }
